@@ -33,7 +33,7 @@
           </tr>
         </thead>
         <tbody id="table">
-            <tr><td>{{ $time }}</td><td>{{ $remote_addr }}</td><td>{{ $cookie }}</td></tr>
+            <tr><td>{{ $time }}</td><td>{{ $remote_addr }}</td></tr>
         </tbody>
 
     </table>
