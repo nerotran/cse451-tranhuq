@@ -43,7 +43,7 @@ Route::get("/remoteinfo",function() {
     ]);
 
     $response = $client->request('GET','');
-    $cookie = $response->getHeader(‘Set-Cookie’);
+    $cookie = $response->getCookie();
     $body = json_decode($response->getBody(),true);
 
 
