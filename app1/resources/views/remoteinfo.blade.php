@@ -25,9 +25,16 @@
     	<h2>Server Info from php</h2>
     <table>
 
-	@foreach (array_keys($server) as $s)
-	<tr><td>{{ $s }}</td><td> {{$server[$s] }} </td></tr>
-	@endforeach
+	<thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">remote_addr</th>
+            <th scope="col">cookie</th>
+          </tr>
+        </thead>
+        <tbody id="table">
+            <tr><td>{{ $time }}</td><td>{{ $remote_addr }}</td><td>{{ $cookie }}</td></tr>
+        </tbody>
 
     </table>
     </body>

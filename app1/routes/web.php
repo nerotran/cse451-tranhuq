@@ -43,9 +43,10 @@ Route::get("/remoteinfo",function() {
     ]);
 
     $response = $client->request('GET','');
+    $body = json_decode($response->getBody(),true);
 
 
-    return view('remoteinfo',['server'=>$response]);
+    return view('remoteinfo',['time'=>$body["time"]],['remote_addr'=>$body["remote_addr"]],['cookie'=>$body["cookie"]]);
 });
 
 Route::get("/serverInfo",function() {
