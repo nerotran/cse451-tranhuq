@@ -43,11 +43,11 @@ Route::get("/remoteinfo",function() {
     ]);
 
     $response = $client->request('GET','');
-    $cookie = $response->cookies();
+    $cookieJar = $client->getConfig('cookies');
     $body = json_decode($response->getBody(),true);
 
 
-    return view('remoteinfo',['time'=>$body["time"]],['remote_addr'=>$body["remote_addr"]],['cookie'=>$cookie]);
+    return view('remoteinfo',['time'=>$body["time"]],['remote_addr'=>$body["remote_addr"]],['cookie'=>$cookieJar]);
 });
 
 Route::get("/serverInfo",function() {
