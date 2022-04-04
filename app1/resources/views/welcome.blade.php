@@ -24,9 +24,14 @@
     <h1> my 451 page </h1>
     <br>
     <a href="{{ url('/') }}">home page</a>
+    <div>
     <a href="{{ url('/about') }}">About</a>
+    <div>
     <a href="{{ url('/451') }}">451</a>
+    <div>
     <a href="{{ url('/data') }}">data</a>
-    <a href="{{ url('/serverInfo') }}">Server Info</a>
+    <div>
+    <a href="{{ url('/serverInfo') }}">ServerInfo</a>
+    <div>
     </body>
 </html>
