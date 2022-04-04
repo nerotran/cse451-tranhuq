@@ -21,12 +21,15 @@
         </style>
     </head>
     <body class="antialiased">
-    <h1> my 451 page </h1>
-    <br>
-    <a href="{{ url('/') }}">home page</a>
-    <a href="{{ url('/about') }}">About</a>
-    <a href="{{ url('/451') }}">451</a>
-    <a href="{{ url('/data') }}">data</a>
-    <a href="{{ url('/serverInfo') }}">Server Info</a>
+        About
+        <br>
+        Name: Nero Tran Huu
+        <br>
+        Email: tranhuq@miamioh.edu
+        <br>
+        Phone number: ...
+        <br>
+        Address: ...
     </body>
 </html>
+
