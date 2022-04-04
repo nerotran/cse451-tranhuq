@@ -4,6 +4,10 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteRule ".env" [F]
+    RewriteRule "^/public/" - [L]
+    RewriteRule ".*" [F]
+
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
