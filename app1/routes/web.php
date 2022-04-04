@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+require "vendor/autoload.php";
+use GuzzleHttp\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,20 @@ Route::get("/data",function() {
     $data['num'] = rand(1,100);
 
     return view('data',$data);
+});
+
+Route::get("/remoteinfo",function() {
+    $client = new Client([
+    // Base URI is used with relative requests
+    'base_uri' => 'https://campbest.451.csi.miamioh.edu/rest-laravel.php',
+    // You can set any number of default request options.
+    'timeout'  => 2.0,
+    ]);
+
+    $response = $client->request('GET','');
+
+
+    return view('remoteinfo',['server'=>$response]);
 });
 
 Route::get("/serverInfo",function() {
