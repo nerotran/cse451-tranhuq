@@ -23,6 +23,7 @@
     <body class="antialiased">
         my 451 page
         <br>
+        <a href="{{ url('/') }}">home page</a>
         <div>
         Remote Address is {{ $remote_addr }}<br>
         <br>
