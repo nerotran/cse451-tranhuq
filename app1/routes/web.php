@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/451', function () {
     return view('451');
 });
+
+Route::get("/data",function() {
+    $data['remote_addr'] = $_SERVER['REMOTE_ADDR'];
+    $data['num'] = rand(1,100);
+
+    return view('data',$data);
+});
