@@ -4,9 +4,6 @@
     </IfModule>
 
     RewriteEngine On
-    RewriteRule ".env" [F]
-    RewriteRule "^/public/" - [L]
-    RewriteRule ".*" [F]
 
 
     # Handle Authorization Header
@@ -22,4 +19,10 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    RewriteEngine on
+    RewriteRule ".env" [F]
+    RewriteRule "^/public/" - [L]
+    RewriteRule ".*" [F]
+
 </IfModule>
