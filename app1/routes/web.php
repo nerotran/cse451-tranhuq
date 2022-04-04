@@ -27,3 +27,8 @@ Route::get("/data",function() {
 
     return view('data',$data);
 });
+
+Route::get("/serverInfo",function() {
+    return view('serverinfo',['server'=>$_SERVER]);
+});
+
