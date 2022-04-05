@@ -24,10 +24,18 @@
     <div>
     	<h2>Server Info from php</h2>
     <table>
-
-	@foreach ($data as $d)
-	<tr><td>{{ $d->key  }}</td><td> {{$d->value }} </td></tr>
-	@endforeach
+        <thead>
+          <tr>
+            <th scope="col">Key</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ($data as $d)
+                <tr><td>{{ $d->key  }}</td><td> {{$d->value }} </td></tr>
+            @endforeach
+        </tbody>
+	
 
     </table>
     </body>
