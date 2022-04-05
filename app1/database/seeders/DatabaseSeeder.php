@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,10 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         $this->call([
          DataSeeder::class
+        ]);
+        DB::table('data')->insert([
+            'key'=>"Hello",
+            'value'=>"scott"
         ]);
     }
 }
