@@ -58,7 +58,7 @@ Route::get("/key",function() {
     $data = DB::table('data')->get();
 
     foreach ($data as $d) {
-        echo $d->name;
+        echo $d->key;
     }
 
     return view('key',['data'=>$data]);
