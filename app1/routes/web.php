@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 require "vendor/autoload.php";
 use GuzzleHttp\Client;
 
@@ -51,5 +52,11 @@ Route::get("/remoteinfo",function() {
 
 Route::get("/serverInfo",function() {
     return view('serverinfo',['server'=>$_SERVER]);
+});
+
+Route::get("/key",function() {
+    $data = DB::table('data')->get();
+    
+    return view('key',['data'=>$data]);
 });
 
