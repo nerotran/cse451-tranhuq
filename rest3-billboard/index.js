@@ -70,7 +70,7 @@ function getSong() {
 
 async function program() {
 	var songs = await getSong();
-	songs.forEach(async (song) => {
+	for (const song of songs) {
 		var thumbs = await getThumbs(song["id"]);
 		thumbsString = "";
 		thumbsString += "<td><span onclick='arrowUp("+song['id']+")' class='bi bi-arrow-up-circle-fill'></span><br>" + song["likes"] + 
@@ -79,7 +79,7 @@ async function program() {
 		"<br>" + thumbs[song["id"]]["dislikes"] + "</td>";
 		$("#table").append("<tr><td>" + song['date'] + "</td><td>" + song['song'] + "</td><td>" + song['artist'] + 
 		"</td><td>" + song['rank'] + "</td>" + thumbsString + "</tr>");
-	})	
+	}	
 }
 
 $(document).ready(function() {

@@ -255,7 +255,7 @@ else if ($method=="get" &&  sizeof($parts) > 1 && $parts[0] == "overthumbs") {
 
   $response = $client->request('GET','');
 
-  $body = json_decode($response->getBody(),true);;
+  $body = json_decode($response->getBody(),true);
   $retData = $body["thumbs"];
 
   $r['status'] = "OK";
