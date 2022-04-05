@@ -25,8 +25,8 @@
     	<h2>Server Info from php</h2>
     <table>
 
-	@foreach (array_keys($data) as $s)
-	<tr><td>{{ $s }}</td><td> {{$data[$s] }} </td></tr>
+	@foreach ($data as $d)
+	<tr><td>{{ $d->key  }}</td><td> {{$d->value }} </td></tr>
 	@endforeach
 
     </table>

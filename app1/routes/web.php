@@ -57,10 +57,6 @@ Route::get("/serverInfo",function() {
 Route::get("/key",function() {
     $data = DB::table('data')->get();
 
-    foreach ($data as $d) {
-        echo $d->key;
-    }
-
     return view('key',['data'=>$data]);
 });
 
