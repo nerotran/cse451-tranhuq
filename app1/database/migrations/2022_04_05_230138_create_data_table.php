@@ -14,8 +14,10 @@ class CreateDataTable extends Migration
     public function up()
     {
         Schema::create('data', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id()->autoincrement();
+            $table->timestamp('createdAt')->useCurrent();
+            $table->string('key')->default('');
+            $table->string('value')->default('');
         });
     }
 
