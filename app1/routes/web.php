@@ -61,17 +61,12 @@ Route::get("/key",function() {
     return view('key',['data'=>$data]);
 });
 
-Route::post("/key/update",function(Request $request) {
+Route::any("/key/update",function(Request $request) {
     $key = $request->input('key');
     $value = $request->input('value',"");
     if (!is_null($key)) {
         DB::table('data')->where('key',$key)->update(['value'=>$value]);
     }
-
-    return view('update');
-});
-
-Route::get("/key/update",function(Request $request) {
 
     return view('update');
 });
