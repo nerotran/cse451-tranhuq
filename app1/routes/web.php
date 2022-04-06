@@ -64,6 +64,8 @@ Route::get("/key",function() {
 Route::any("/key/update",function(Request $request) {
     $key = $request->input('key',"Hello");
     $value = $request->input('value',"scott");
+    echo $key;
+    echo $value;
 
     DB::table('data')->where('key',$key)->update(['value'=>$value]);
 
