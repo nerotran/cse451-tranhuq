@@ -23,7 +23,7 @@
     <a href="{{ url('/') }}">home page</a>
     <div>
     	<h2>Server Info from php</h2>
-    <form action="/cse451-tranhuq-web/app1/public/key/update" method="get">
+    <form action="/cse451-tranhuq-web/app1/public/key/update" method="post">
         <label for="key">Key:</label><br>
         <input type="input" id="key" name="key"><br>
         <label for="value">value:</label><br>
