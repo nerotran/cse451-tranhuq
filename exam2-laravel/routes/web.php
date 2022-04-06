@@ -29,6 +29,5 @@ Route::get('/random', function () {
     $retdata["msg"] = "";
     $retdata["random"] = rand();
 
-    print json_encode($returnData);
-    exit;
+    return json_encode($returnData);
 });
