@@ -67,6 +67,17 @@ Route::any("/key/update",function(Request $request) {
     echo $key;
     echo $value;
 
+    $cnt = DB::table('data')->where('key',$key)->first();
+    if (isset($cnt->value))
+    {
+        DB::table('data')->where('key',$key)->update(['value'=>$value]);
+    }       
+    else
+    {
+        DB::table('data')->insert([
+        'key'=>$key,'value'=>$value]);
+    }
+
     DB::table('data')->where('key',$key)->update(['value'=>$value]);
 
     return view('update');
