@@ -61,7 +61,7 @@ Route::get("/key",function() {
     return view('key',['data'=>$data]);
 });
 
-Route::get("/key/update",function() {
+Route::get("/key/update",function(Request $request) {
     $key = $request->input('key');
     $value = $request->input('value',"");
     if (!is_null($key)) {
