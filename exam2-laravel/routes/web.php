@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/time', function () {
     $time = date("h:i:s a", time());
-    return view('time');
+    return view('time', $time);
 });
 
 Route::get('/random', function () {
