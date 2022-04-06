@@ -26,9 +26,9 @@
     <form action="/cse451-tranhuq-web/app1/public/key/update" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <label for="key">Key:</label><br>
-        <input type="text" id="key" name="key"><br>
+        <input type="input" id="key" name="key"><br>
         <label for="value">value:</label><br>
-        <input type="text" id="value" name="value"><br><br>
+        <input type="input" id="value" name="value"><br><br>
         <input type="submit" value="Submit">
     </form>
     </body>
