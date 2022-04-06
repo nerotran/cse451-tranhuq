@@ -79,7 +79,7 @@ array_shift($parts);
 
 if ($_SERVER['REQUEST_METHOD'] == "GET" && $parts[0] == "live") {
   $retdata = array();
-  $retdata["rnd"] = get();
+  $retdata["exam2"] = get();
   sendJson("OK","",$retdata);
 }
 
