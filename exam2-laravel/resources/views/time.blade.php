@@ -21,15 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        About
-        <br>
-        Name: Nero Tran Huu
-        <br>
-        Email: tranhuq@miamioh.edu
-        <br>
-        Phone number: ...
-        <br>
-        Address: ...
+        <h1>Current time: {{ $time }}</h1>
     </body>
 </html>
 
