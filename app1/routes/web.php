@@ -60,3 +60,13 @@ Route::get("/key",function() {
     return view('key',['data'=>$data]);
 });
 
+Route::get("/key/update",function() {
+    $key = $request->input('key');
+    $value = $request->input('value',"");
+    if (!is_null($key)) {
+        DB::table('data')->where('key',$key)->update(['value'=>$value]);
+    }
+
+    return view('update');
+});
+
