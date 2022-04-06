@@ -71,3 +71,8 @@ Route::post("/key/update",function(Request $request) {
     return view('update');
 });
 
+Route::get("/key/update",function(Request $request) {
+
+    return view('update');
+});
+
