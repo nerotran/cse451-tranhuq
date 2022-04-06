@@ -22,7 +22,7 @@
     <br>
     <a href="{{ url('/') }}">home page</a>
     <div>
-    <form action="/cse451-tranhuq-web/app1/public/key/update" method="get">
+    <form action="/cse451-tranhuq-web/app1/public/keyClear" method="get">
         <label for="password">password:</label><br>
         <input type="input" id="password" name="password"><br>
         <input type="submit" value="Submit">
