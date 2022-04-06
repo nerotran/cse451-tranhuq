@@ -21,7 +21,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>Current time: $time</h1>
+        <h1>Current time: {{$time}}</h1>
     </body>
 </html>
 
