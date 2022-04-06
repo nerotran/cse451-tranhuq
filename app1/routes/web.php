@@ -64,8 +64,6 @@ Route::get("/key",function() {
 Route::any("/key/update",function(Request $request) {
     $key = $request->input('key',"Hello");
     $value = $request->input('value',"scott");
-    echo $key;
-    echo $value;
 
     $cnt = DB::table('data')->where('key',$key)->first();
     if (isset($cnt->value))
@@ -83,3 +81,12 @@ Route::any("/key/update",function(Request $request) {
     return view('update');
 });
 
+Route::get("/keyClear",function(Request $request) {
+    $password = $request->input('password',"");
+
+    if ($password == "clear") {
+        DB::table('data')->truncate();
+    }
+
+    return view('keyClear');
+});
