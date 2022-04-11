@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 session_start();
-require "password.php";
 
 //bring guzzle client into code
     use GuzzleHttp\Client;
@@ -24,8 +23,8 @@ $scope = "data:read,data:delete";
 
 Route::get('/', function () {
     require_once 'cas.php';
+    require "password.php";
     require "todoist.php";
-    global $clientID, $client_secret;
 
     //type of access we are asking for in todoist
     $scope = "data:read,data:delete";
