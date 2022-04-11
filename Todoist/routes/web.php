@@ -37,6 +37,7 @@ Route::get('/', function () {
     //if no token, start oauth process
     if (!isset($_SESSION['token']) || !isset($_SESSION['token-time']) || (time() - $_SESSION['token-time']) > 60) {
       header("Location: https://todoist.com/oauth/authorize?client_id=$clientID&scope=$scope&state=nero");
+    }
 
 
     $projects = getProjects();
