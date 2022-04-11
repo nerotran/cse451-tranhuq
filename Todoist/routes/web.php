@@ -89,6 +89,6 @@ Route::get('/todoist', function (Request $request) {
     $_SESSION['token-time'] = time();
     error_log("todoist code -> got access");
 
-    header("location: /");
+    header("location: https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/");
 
 });
