@@ -117,7 +117,7 @@ Route::any('/task/', function (Request $request) {
     try {
         $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
 
-        $response = $client->request('GET',['headers'=>$header]);
+        $response = $client->request('GET','',['headers'=>$header]);
     } catch (Exception $e) {
       print "There was an error getting the projects from todoist";
       header("content-type: text/plain",true);
