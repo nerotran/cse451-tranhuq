@@ -6,7 +6,7 @@
 
 
 //this calls in all autoload packages installed via composer
-require __DIR__ . '../vendor/autoload.php'; 
+require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php';  
 require "password.php";
 
 //bring guzzle client into code
