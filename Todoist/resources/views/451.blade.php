@@ -27,7 +27,7 @@
         <ul>
             <?php 
                 foreach ($projects as $i) {
-                  print "<li><a href='/task/project?id='" . $i->id . "'>" . $i->name . "</a></li>";
+                  print "<li><a href='/task/project?id='" . $i->id . "'>" . $i->id . "</a></li>";
                 }
             ?>
         </ul>
