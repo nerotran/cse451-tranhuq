@@ -25,7 +25,7 @@ function getProjects() {
 try {
   $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
 
-  $response = $client->request('get',$uri . "projects",['headers'=>$header]);
+  $response = $client->request('GET',"projects",['headers'=>$header]);
 } catch (Exception $e) {
   print "There was an error getting the projects from todoist";
   header("content-type: text/plain",true);
