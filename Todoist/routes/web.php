@@ -49,5 +49,6 @@ if (isset($_REQUEST['logout'])) {
 $user = phpCAS::getUser();
 
 Route::get('/', function () {
+    global $user;
     return view('451',['user'=>$user]);
 });
