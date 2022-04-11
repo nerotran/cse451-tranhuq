@@ -46,7 +46,7 @@ if (isset($_REQUEST['logout'])) {
     phpCAS::logout();
 }
 
-$user = phpCAS:getUser();
+$user = phpCAS::getUser();
 
 Route::get('/', function () {
     return view('451',['user'=>$user]);
