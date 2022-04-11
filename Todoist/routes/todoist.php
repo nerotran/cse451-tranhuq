@@ -1,14 +1,9 @@
 <?php
-/*
- * scott campbell
- * example guzzle client to call dark web
- * */
 
 
 //this calls in all autoload packages installed via composer
 require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php';  
 require "password.php";
-session_start();
 
 //bring guzzle client into code
 use GuzzleHttp\Client;
