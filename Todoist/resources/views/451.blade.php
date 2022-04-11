@@ -21,10 +21,13 @@
         </style>
     </head>
     <body class="antialiased">
+        You are authenticated - {{$user}}
+        <br>
+        Here are the projects:
         <ul>
             <?php 
                 foreach ($projects as $i) {
-                  print "<li>" . $i->name . "</li>";
+                  print "<li><a href='/task/project?id='" . $i->id . "'>" . $i->name . "</a></li>";
                 }
             ?>
         </ul>
