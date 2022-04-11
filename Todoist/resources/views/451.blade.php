@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         @foreach (array_keys($projects) as $s)
-            <li>{{$s}}</li>
+            <li>{{$projects[$s]}}</li>
         @endforeach
     </body>
 </html>
