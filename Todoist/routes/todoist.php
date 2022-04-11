@@ -9,7 +9,7 @@ require "password.php";
 use GuzzleHttp\Client;
 
 //base uri -> it is important it end in /
-$uri = "https://api.todoist.com/rest/v1/";
+$uri = "https://api.todoist.com/rest/v1/projects";
 
 
 //create a new client
@@ -26,7 +26,7 @@ try {
   $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
   Log::info($_SESSION['token']);
 
-  $response = $client->request('GET',"projects",['headers'=>$header]);
+  $response = $client->request('GET',['headers'=>$header]);
 } catch (Exception $e) {
   print "There was an error getting the projects from todoist";
   header("content-type: text/plain",true);
