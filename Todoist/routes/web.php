@@ -14,13 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Load the settings from the central config file
-require_once 'config.php';
-// Load the CAS lib
-require_once '../vendor/autoload.php';
-require_once '../vendor/apereo/phpcas/CAS.php';
-
 Route::get('/', function () {
+    // Load the settings from the central config file
+    require_once 'config.php';
+    // Load the CAS lib
+    require_once '../vendor/autoload.php';
+    require_once '../vendor/apereo/phpcas/CAS.php';
     // Enable debugging
     phpCAS::setDebug('/tmp/cas');
 
