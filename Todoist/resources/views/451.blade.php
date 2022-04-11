@@ -22,7 +22,6 @@
     </head>
     <body class="antialiased">
         @foreach (array_keys($projects) as $s)
-            <tr><td>{{ $s }}</td><td> {{ }} </td></tr>
             <li>$projects[$s]["name"]</li>
         @endforeach
     </body>
