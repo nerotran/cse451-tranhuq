@@ -24,6 +24,7 @@ function getProjects() {
   global $client;
 try {
   $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
+  Log::info($_SESSION['token']);
 
   $response = $client->request('GET',"projects",['headers'=>$header]);
 } catch (Exception $e) {
