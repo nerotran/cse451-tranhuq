@@ -21,9 +21,10 @@
         </style>
     </head>
     <body class="antialiased">
-        my 451 page
-        <br>
-        <a href="{{ url('/') }}">{{ $user }}</a>
+        @foreach (array_keys($projects) as $s)
+            <tr><td>{{ $s }}</td><td> {{ }} </td></tr>
+            <li>$projects[$s]["name"]</li>
+        @endforeach
     </body>
 </html>
 
