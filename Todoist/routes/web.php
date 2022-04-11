@@ -29,8 +29,7 @@ Route::get('/', function () {
 
     //type of access we are asking for in todoist
     $scope = "data:read,data:delete";
-
-    session_start();
+    
     //if user is asking for logout, remove token
     if (isset($_REQUEST['logout'])) {
       unset($_SESSION['token']);
@@ -50,7 +49,7 @@ Route::get('/', function () {
 Route::get('/todoist', function () {
 
     //this calls in all autoload packages installed via composer
-    require '../vendor/autoload.php'; 
+    require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php'; 
     require "password.php";
 
     //base uri -> it is important it end in /
