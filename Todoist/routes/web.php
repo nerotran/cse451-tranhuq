@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+//bring guzzle client into code
+use GuzzleHttp\Client;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 session_start();
 
-//bring guzzle client into code
-    use GuzzleHttp\Client;
+
 
 //type of access we are asking for in todoist
 $scope = "data:read,data:delete";
@@ -88,9 +90,5 @@ Route::any('/todoist', function (Request $request) {
     error_log("todoist code -> got access");
 
     header("location: /");
-
-    $projects = getProjects();
-
-    return view('451',['user'=>$user], $projects);
 
 });
