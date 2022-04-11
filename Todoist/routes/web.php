@@ -87,6 +87,6 @@ Route::any('/todoist', function (Request $request) {
     $_SESSION['token-time'] = time();
     error_log("todoist code -> got access");
 
-    header("location: index.php");
+    header("location: /");
 
 });
