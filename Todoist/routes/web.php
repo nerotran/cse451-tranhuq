@@ -45,7 +45,7 @@ Route::get('/', function () {
     return view('451',['user'=>$user], $projects);
 });
 
-Route::get('/todoist', function () {
+Route::any('/todoist', function (Request $request) {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php'; 
@@ -62,7 +62,8 @@ Route::get('/todoist', function () {
         // You can set any number of default request options.
         'timeout'  => 2.0,
     ]);
-     $code =htmlspecialchars($_REQUEST['code']);
+    $code = $request->input('code');
+    $state = $request->input('state');
 
     try {
       $data = array("client_id"=>$clientID,"client_secret"=>$clientSecret,"code"=>$code,'redirect_uri'=>'https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/');
