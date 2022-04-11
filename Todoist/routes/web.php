@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 session_start();
 require "password.php";
 
+//bring guzzle client into code
+    use GuzzleHttp\Client;
+
 
 //type of access we are asking for in todoist
 $scope = "data:read,data:delete";
@@ -50,9 +53,6 @@ Route::get('/todoist', function () {
     //this calls in all autoload packages installed via composer
     require __DIR__ . '../vendor/autoload.php'; 
     require "password.php";
-
-    //bring guzzle client into code
-    use GuzzleHttp\Client;
 
     //base uri -> it is important it end in /
     $uri = "https://todoist.com/oauth/access_token";
