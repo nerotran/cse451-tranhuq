@@ -21,9 +21,14 @@
         </style>
     </head>
     <body class="antialiased">
-        @foreach (array_keys($projects) as $s)
-            <li>{{$projects[$s]}}</li>
-        @endforeach
+        <ul>
+            <?php 
+                foreach ($projects as $i) {
+                  print "<li>" . $i->name . "</li>";
+                }
+            ?>
+        </ul>
+
     </body>
 </html>
 
