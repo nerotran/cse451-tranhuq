@@ -18,7 +18,6 @@ require "password.php";
 //bring guzzle client into code
     use GuzzleHttp\Client;
 
-
 //type of access we are asking for in todoist
 $scope = "data:read,data:delete";
 
