@@ -68,7 +68,7 @@ Route::get('/todoist', function (Request $request) {
     $state = $request->input('state');
 
     try {
-      $data = array("client_id"=>$clientID,"client_secret"=>$clientSecret,"code"=>$code,'redirect_uri'=>'https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/');
+      $data = array("client_id"=>$clientID,"client_secret"=>$client_secret,"code"=>$code,'redirect_uri'=>'https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/');
       $response = $client->request('POST',"",['form_params'=>$data]);
     } catch (Exception $e) {
       print "There was an error getting the token from todoist";
