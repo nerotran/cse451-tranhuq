@@ -47,7 +47,7 @@ Route::get('/', function () {
     return view('451',['user'=>$user], $projects);
 });
 
-Route::any('/todoist', function (Request $request) {
+Route::get('/todoist', function (Request $request) {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php'; 
