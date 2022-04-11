@@ -93,7 +93,7 @@ Route::get('/todoist', function (Request $request) {
 
 });
 
-Route::get('/task/projects', function (Request $request) {
+Route::any('/task/', function (Request $request) {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php'; 
