@@ -133,6 +133,6 @@ Route::any('/task/', function (Request $request) {
       exit;
     }
 
-    return view("task",['user'=>$user], ['tasks'=>$tasks]);
+    return view("task",['user'=>$user], ['tasks'=>$jbody]);
 
 });
