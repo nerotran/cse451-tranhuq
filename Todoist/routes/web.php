@@ -89,4 +89,8 @@ Route::any('/todoist', function (Request $request) {
 
     header("location: /");
 
+    $projects = getProjects();
+
+    return view('451',['user'=>$user], $projects);
+
 });
