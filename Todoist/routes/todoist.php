@@ -8,24 +8,22 @@ require "password.php";
 //bring guzzle client into code
 use GuzzleHttp\Client;
 
-//base uri -> it is important it end in /
-$uri = "https://api.todoist.com/rest/v1/";
 
-
-//create a new client
-$client = new Client([
-    // Base URI is used with relative requests
-    'base_uri' => $uri,
-    // You can set any number of default request options.
-    'timeout'  => 2.0,
-]);
 
 function getProjects() {
+    //base uri -> it is important it end in /
+    $uri = "https://api.todoist.com/rest/v1/";
+
+    //create a new client
+    $client = new Client([
+        // Base URI is used with relative requests
+        'base_uri' => $uri,
+        // You can set any number of default request options.
+        'timeout'  => 2.0,
+    ]);
   
 try {
-  global $client;
   $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
-  Log::info($client);
 
   $response = $client->request('GET',"projects",['headers'=>$header]);
 } catch (Exception $e) {
