@@ -27,7 +27,7 @@
         <ul>
             <?php 
                 foreach ($projects as $i) {
-                  print "<li><a href='cse451-tranhuq-web/Todoist/public/task/?id=" . $i->id . "'>" . $i->name . "</a></li>";
+                  print "<li><a href='/cse451-tranhuq-web/Todoist/public/task/?id=" . $i->id . "'>" . $i->name . "</a></li>";
                 }
             ?>
         </ul>
