@@ -51,7 +51,7 @@ Route::get('/', function () {
 Route::get('/todoist', function () {
 
     //this calls in all autoload packages installed via composer
-    require __DIR__ . '../vendor/autoload.php'; 
+    require '../vendor/autoload.php'; 
     require "password.php";
 
     //base uri -> it is important it end in /
