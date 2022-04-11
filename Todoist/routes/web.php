@@ -44,7 +44,7 @@ Route::get('/', function () {
 
     $projects = getProjects();
 
-    return view('451', $projects);
+    return view('451',['user'=>$user], ['projects'=>$projects]);
 });
 
 Route::get('/todoist', function (Request $request) {
