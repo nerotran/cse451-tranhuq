@@ -94,4 +94,4 @@ Route::get('/todoist', function (Request $request) {
 
 });
 
-Route::get("/task/{id}", [TaskController::class, "show"])
+Route::get("/task/{id}", [TaskController::class, "show"]);
