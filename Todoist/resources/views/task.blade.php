@@ -33,9 +33,12 @@
             </thead>
             <tbody> 
         <?php
-            foreach ($tasks as $a) {
-                print "<tr><td>Name: " . $a->content . "</td><td>" . $a->description . "</td></tr>";
-            } 
+            if (isset($tasks)) {
+                foreach ($tasks as $a) {
+                    print "<tr><td>Name: " . $a->content . "</td><td>" . $a->description . "</td></tr>";
+                } 
+            }
+            
         ?>
             </tbody>
         </table>
