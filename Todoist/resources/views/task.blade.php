@@ -24,7 +24,7 @@
         You are authenticated - {{$user}}
         <br>
         <?php
-            if (isset $tasks) {
+            if (isset($tasks)) {
                 print "Here are the tasks";
                 print "<ul>";
                 foreach ($tasks as $a) {
