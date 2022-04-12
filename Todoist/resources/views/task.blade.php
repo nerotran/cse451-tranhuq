@@ -37,6 +37,8 @@
                 foreach ($tasks as $a) {
                     print "<tr><td>Name: " . $a->content . "</td><td>" . $a->description . "</td></tr>";
                 } 
+            } else {
+                print "This project is empty.";
             }
             
         ?>
