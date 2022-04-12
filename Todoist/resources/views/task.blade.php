@@ -47,7 +47,8 @@
             }    
         ?>
 
-        <a href="{{ url('/') }}">home page</a>
+        <br>
+        <h1> <a href="{{ url('/') }}">home page</a> </h1>
 
     </body>
 </html>
