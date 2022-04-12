@@ -23,14 +23,18 @@
     <body class="antialiased">
         You are authenticated - {{$user}}
         <br>
-        Here are the tasks:
-        <ul>
-            <?php 
+        <?php
+            if (isset $tasks) {
+                print "Here are the tasks";
+                print "<ul>";
                 foreach ($tasks as $a) {
-                  print "<li>Name: " . $a->content . "</li>";
+                    print "<li>Name: " . $a->content . "</li>";
                 }
-            ?>
-        </ul>
+                print "</ul>";
+            } else {
+                print "The project is empty.";
+            }   
+        ?>
 
     </body>
 </html>
