@@ -46,6 +46,14 @@ class TaskController extends Controller
           exit;
         }
 
-        return view('task', ['user' => $user], ['tasks'=>$jbody]);
+        $tasks = array();
+
+        foreach  ($jbody as &$task) {
+            if ($task["project_id"] == $id) {
+                $tasks[] = $task;
+            }
+        }
+
+        return view('task', ['user' => $user], ['tasks'=>$tasks]);
     }
 }
