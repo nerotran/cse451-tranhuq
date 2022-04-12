@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\taskController;
 //bring guzzle client into code
 use GuzzleHttp\Client;
 

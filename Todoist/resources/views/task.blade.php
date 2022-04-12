@@ -27,7 +27,7 @@
         <ul>
             <?php 
                 foreach ($tasks as $a) {
-                  print "<li>" . $a . "</li>";
+                  print "<li>Name: " . $a->name . "</li>";
                 }
             ?>
         </ul>
