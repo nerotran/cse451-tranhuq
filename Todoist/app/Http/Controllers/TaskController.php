@@ -49,7 +49,9 @@ class TaskController extends Controller
         $tasks = array();
 
         foreach  ($jbody as &$task) {
-            print($task);
+            if ($task->project_id == $id) {
+                $tasks[] = $task;
+            }
         }
 
         return view('task', ['user' => $user], ['tasks'=>$tasks]);
