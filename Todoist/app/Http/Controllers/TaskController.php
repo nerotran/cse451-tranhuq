@@ -43,7 +43,7 @@ class TaskController extends Controller
         $jbody = json_decode($body);
         if (!$jbody) {
           error_log("no json");
-          exit;
+          return view('task', ['user' => $user]);
         }
 
         $tasks = array();
