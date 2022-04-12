@@ -23,18 +23,22 @@
     <body class="antialiased">
         You are authenticated - {{$user}}
         <br>
+        Here are the tasks:
+        <table>
+            <thead>
+              <tr>
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody> 
         <?php
-            if (isset($tasks)) {
-                print "Here are the tasks";
-                print "<ul>";
-                foreach ($tasks as $a) {
-                    print "<li>Name: " . $a->content . "</li>";
-                }
-                print "</ul>";
-            } else {
-                print "The project is empty.";
-            }   
+            foreach ($tasks as $a) {
+                print "<tr><td>Name: " . $a->content . "</td><td>" . $a->description . "</td></tr>";
+            } 
         ?>
+            </tbody>
+        </table>
 
     </body>
 </html>
