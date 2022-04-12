@@ -37,13 +37,17 @@
                 foreach ($tasks as $a) {
                     print "<tr><td>Name: " . $a->content . "</td><td>" . $a->description . "</td></tr>";
                 } 
-            } else {
-                print "This project is empty.";
-            }
-            
+            }    
         ?>
             </tbody>
         </table>
+        <?php
+            if (!isset($tasks)) {
+                    print "This project is empty";
+            }    
+        ?>
+
+        <a href="{{ url('/') }}">home page</a>
 
     </body>
 </html>
