@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\taskController;
+use App\Http\Controllers\TaskController;
 //bring guzzle client into code
 use GuzzleHttp\Client;
 
@@ -94,46 +94,4 @@ Route::get('/todoist', function (Request $request) {
 
 });
 
-Route::any('/task/', function (Request $request) {
-
-    //this calls in all autoload packages installed via composer
-    require '/var/www/html/cse451-tranhuq-web/Todoist/vendor/autoload.php'; 
-    require "password.php";
-    require_once 'cas.php';
-
-    //base uri -> it is important it end in /
-    $uri = "https://api.todoist.com/rest/v1/tasks?project_id=";
-    $id = $request->input('id');
-    $uri = $uri . $id;
-
-
-    //create a new client
-    $client = new Client([
-        // Base URI is used with relative requests
-        'base_uri' => $uri,
-        // You can set any number of default request options.
-        'timeout'  => 2.0,
-    ]);
-    
-    try {
-        $header = array("Authorization"=>"Bearer " . $_SESSION['token']);
-
-        $response = $client->request('GET','',['headers'=>$header]);
-    } catch (Exception $e) {
-      print "There was an error getting the projects from todoist";
-      header("content-type: text/plain",true);
-      print_r($e);
-      $a=print_r($e,true);
-      error_log($a);
-      exit;
-    }
-    $body = (string) $response->getBody();
-    $jbody = json_decode($body);
-    if (!$jbody) {
-      error_log("no json");
-      exit;
-    }
-
-    return view("task",['user'=>$user], ['tasks'=>$jbody]);
-
-});
+Route::get("/task/{id}", [TaskController::class, "show"])
