@@ -92,7 +92,7 @@ Route::get('/todoist', function (Request $request) {
 
     header("location: https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/");
 
-    return redirect("/")
+    return redirect("/");
 
 });
 
