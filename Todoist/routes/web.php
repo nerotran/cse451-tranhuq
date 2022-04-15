@@ -76,7 +76,9 @@ Route::get('/todoist', function (Request $request) {
     //  header("content-type: text/plain",true);
      // print_r($e);
       $a=print_r($e,true);
-      error_log($a);
+      error_log($clientID);
+      error_log($client_secret);
+      error_log($code);
       exit;
     }
     $body = (string) $response->getBody();
