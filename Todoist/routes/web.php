@@ -39,7 +39,7 @@ Route::get('/', function () {
 
     //if no token, start oauth process
     if (!isset($_SESSION['token']) || !isset($_SESSION['token-time']) || (time() - $_SESSION['token-time']) > 60) {
-      header("Location: https://todoist.com/oauth/authorize?client_id=$clientID&scope=$scope&state=nero");
+      return redirect()->away("https://todoist.com/oauth/authorize?client_id=$clientID&scope=$scope&state=nero");
     }
 
 
@@ -66,7 +66,6 @@ Route::get('/todoist', function (Request $request) {
         'timeout'  => 2.0,
     ]);
     $code = $request->input('code');
-    $state = $request->input('state');
 
     try {
       $data = array("client_id"=>$clientID,"client_secret"=>$client_secret,"code"=>$code,'redirect_uri'=>'https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/');
@@ -76,9 +75,7 @@ Route::get('/todoist', function (Request $request) {
     //  header("content-type: text/plain",true);
      // print_r($e);
       $a=print_r($e,true);
-      error_log($clientID);
-      error_log($client_secret);
-      error_log($code);
+      error_log($a);
       exit;
     }
     $body = (string) $response->getBody();
@@ -94,7 +91,7 @@ Route::get('/todoist', function (Request $request) {
 
     header("location: https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/");
 
-    return redirect("/");
+    return redirect("/")
 
 });
 
