@@ -19,11 +19,6 @@ use GuzzleHttp\Client;
 session_start();
 
 
-
-//type of access we are asking for in todoist
-$scope = "data:read,data:delete";
-
-
 Route::get('/', function () {
     require_once 'cas.php';
     require "password.php";
@@ -88,8 +83,6 @@ Route::get('/todoist', function (Request $request) {
     $_SESSION['token'] = $jbody->access_token;
     $_SESSION['token-time'] = time();
     error_log("todoist code -> got access");
-
-    header("location: https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Todoist/public/");
 
     return redirect("/");
 
