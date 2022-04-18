@@ -97,7 +97,7 @@ class WeatherController extends Controller
                   error_log("no json");
                 }
 
-                $temp = $jbody["main"]["temp"];
+                $temp = $jbody->main->temp;
                 
                 //store temp in the cache
                 Cache::put(‘temp’,$temp,$seconds=15); //this will tell laravel to cache this object for 15 seconds.
