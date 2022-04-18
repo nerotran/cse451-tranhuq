@@ -107,5 +107,7 @@ class WeatherController extends Controller
                 sendJson("OK",$r);
             }
         }
+        $r['status'] = "FAIL";
+        sendJson("FAIL",$r);
     }
 }
