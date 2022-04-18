@@ -88,7 +88,7 @@ Route::get('/todoist', function (Request $request) {
 
 });
 
-Route::get('/buildings'{
+Route::get('/buildings', function () {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Buildings/vendor/autoload.php'; 
