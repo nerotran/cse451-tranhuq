@@ -125,7 +125,7 @@ Route::get('/buildings', function () {
 
 Route::get('/weather', function () {
 
-    return view('weather');
+    redirect("/index.php/api/temp");
 
 });
 
