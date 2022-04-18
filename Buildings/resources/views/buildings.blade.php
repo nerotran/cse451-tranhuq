@@ -32,8 +32,8 @@
             <tbody> 
         <?php
             if (isset($buildings)) {
-                foreach ($buildings as $a) {
-                    print "<tr><td>" . $a["0"] . "</td></tr>";
+                foreach ($buildings[0] as $a) {
+                    print "<tr><td>" . $a->buildingName . "</td><td>" . $a->buildingAddress . ", " . $a->buildingCity . ", " . $a->buildingState . " " . $a->buildingZip . "</td><td><img src='" . $a->imageURL .  "'></img></td></tr>";
                 } 
             }    
         ?>
