@@ -127,7 +127,7 @@ Route::get('/weather', function () {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Buildings/vendor/autoload.php';
-    $uri = "https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Buildings/public/index.php/api/temp"; 
+    $uri = "/index.php/api/temp"; 
 
     //create a new client
     $client = new Client([
