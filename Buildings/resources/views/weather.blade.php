@@ -31,6 +31,7 @@
                     method: "GET"
 
                 }).done(function(data) {
+                    console.log(data);
                     $("#temp").append(data["temp"]);
                 }).fail(function(xhr, status, error) {
                     document.getElementById("zip").value = "";
