@@ -140,7 +140,7 @@ Route::get('/weather', function () {
     try {
       $response = $client->request('GET',"");
     } catch (Exception $e) {
-      print "There was an error getting the token from todoist";
+      print $e;
     //  header("content-type: text/plain",true);
      // print_r($e);
       $a=print_r($e,true);
