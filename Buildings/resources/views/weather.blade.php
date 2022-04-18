@@ -20,6 +20,8 @@
             }
         </style>
 
+        <script src="https://www.google.com/jsapi"></script>
+
         <script>
             google.load('jquery', '1.3.2');
             $(document).ready(function() {
