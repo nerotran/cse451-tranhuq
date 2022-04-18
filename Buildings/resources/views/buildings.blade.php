@@ -21,9 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-        You are authenticated - {{$user}}
-        <br>
-        Here are the tasks:
         <table>
             <thead>
               <tr>
@@ -42,9 +39,6 @@
         ?>
             </tbody>
         </table>
-
-        <br>
-        <h1> <a href="{{ url('/') }}">home page</a> </h1>
 
     </body>
 </html>
