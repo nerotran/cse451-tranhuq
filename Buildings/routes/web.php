@@ -121,12 +121,12 @@ Route::get('/buildings', function () {
 
     return view('buildings', ['buildings'=>$jbody]);
 
-});
+})->middleware('cas.auth');
 
 Route::get('/weather', function () {
 
     return redirect("/index.php/api/temp");
 
-});
+})->middleware('cas.auth');
 
 Route::get("/task/{id}", [TaskController::class, "show"]);
