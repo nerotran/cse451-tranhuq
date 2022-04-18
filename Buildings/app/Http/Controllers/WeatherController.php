@@ -100,7 +100,7 @@ class WeatherController extends Controller
                 $temp = $jbody->main->temp;
                 
                 //store temp in the cache
-                Cache::put(‘temp’,$temp,$seconds=15); //this will tell laravel to cache this object for 15 seconds.
+                Cache::put("temp",$temp,$seconds=15); //this will tell laravel to cache this object for 15 seconds.
 
                 $r['status'] = "LIVE";
                 $r['temp'] = $temp;
