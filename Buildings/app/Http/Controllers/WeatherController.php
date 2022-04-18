@@ -37,6 +37,33 @@ class WeatherController extends Controller
         $uri = "https://api.openweathermap.org/data/2.5/weather?zip=45056,US&units=imperial&appid=";
         $uri = $uri . $APIKEY;
 
+        //parse parts
+        if (isset($_SERVER['PATH_INFO'])) {
+          $parts = explode("/",$_SERVER['PATH_INFO']);
+          //sanitize
+          for ($i=0;$i<count($parts);$i++) {
+            $parts[$i] = htmlspecialchars($parts[$i]);
+          }
+        } else {
+          $parts = array();
+        }
+
+        array_shift($parts);  //get rid of first part of url which is bogus
+        //get method type
+        //
+
+        //check api/v1 and shift off stack
+        if (sizeof($parts) <2 || $parts[0] != "api") {
+          sendJson("FAIL","Bad Request not /api",[]);
+        }
+        array_shift($parts);
+
+        $method = strtolower($_SERVER['REQUEST_METHOD']);
+
+        if ($method == "options") {
+          sendJson("OK","",[]);
+        }
+
         if ($method=="get" &&  sizeof($parts) == 1 && $parts[0] == "temp") {
             
 
