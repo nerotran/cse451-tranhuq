@@ -19,7 +19,7 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <script src="weather.js"></script>
+        <script src="/var/www/html/cse451-tranhuq-web/Buildings/resources/views/weather.js"></script>
 
     </head>
     <body class="antialiased">
