@@ -36,7 +36,6 @@ class TaskController extends Controller
           header("content-type: text/plain",true);
           print_r($e);
           $a=print_r($e,true);
-          error_log($a);
           exit;
         }
         $body = (string) $response->getBody();
