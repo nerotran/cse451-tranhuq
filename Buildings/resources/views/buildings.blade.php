@@ -32,7 +32,7 @@
             <tbody> 
         <?php
             if (isset($buildings)) {
-                foreach ($buildings[0] as $a) {
+                foreach ($buildings->data as $a) {
                     print "<tr><td>" . $a->buildingName . "</td><td>" . $a->buildingAddress . ", " . $a->buildingCity . ", " . $a->buildingState . " " . $a->buildingZip . "</td><td><img src='" . $a->imageURL .  "'></img></td></tr>";
                 } 
             }    
