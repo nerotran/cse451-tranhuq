@@ -86,10 +86,9 @@ class WeatherController extends Controller
 
                     $response = $client->request('GET','');
                 } catch (Exception $e) {
-                  header("content-type: text/plain",true);
-                  print_r($e);
-                  $a=print_r($e,true);
-                  exit;
+                  $r['status'] = "FAIL";
+                  $r['error'] = $e;
+                  sendJson("FAIL",$r);
                 }
                 $body = (string) $response->getBody();
                 $jbody = json_decode($body);
