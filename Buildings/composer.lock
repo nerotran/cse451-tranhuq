@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b6e6af19e9a2644c9e163dbd4f472e0d",
+    "content-hash": "1d2ac13015b1760359d1a30dd2957f13",
     "packages": [
         {
             "name": "apereo/phpcas",
@@ -2917,6 +2917,75 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "subfission/cas",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/subfission/cas.git",
+                "reference": "0a222d1032e734451e66972aa546c8ee026fb980"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/subfission/cas/zipball/0a222d1032e734451e66972aa546c8ee026fb980",
+                "reference": "0a222d1032e734451e66972aa546c8ee026fb980",
+                "shasum": ""
+            },
+            "require": {
+                "apereo/phpcas": "^1.3",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.21",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Subfission\\Cas\\CasServiceProvider"
+                    ],
+                    "aliases": {
+                        "Cas": "Subfission\\Cas\\Facades\\Cas"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Subfission/Cas/functions.php"
+                ],
+                "psr-4": {
+                    "Subfission\\Cas\\": "src/Subfission/Cas/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "subfission",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds CAS support to Laravel 5.x - 9.x",
+            "keywords": [
+                "SSO",
+                "cas",
+                "laravel",
+                "laravel 6",
+                "laravel 7",
+                "laravel 8",
+                "laravel 9",
+                "phpCAS"
+            ],
+            "support": {
+                "issues": "https://github.com/subfission/cas/issues",
+                "source": "https://github.com/subfission/cas/tree/v4.2.0"
+            },
+            "time": "2022-03-01T13:14:18+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
