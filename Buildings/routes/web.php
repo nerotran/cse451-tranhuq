@@ -123,7 +123,7 @@ Route::get('/buildings', function () {
 
 });
 
-Route::get('/buildings', function () {
+Route::get('/weather', function () {
 
     //this calls in all autoload packages installed via composer
     require '/var/www/html/cse451-tranhuq-web/Buildings/vendor/autoload.php';
