@@ -21,6 +21,7 @@
         </style>
 
         <script>
+            google.load('jquery', '1.3.2');
             $(document).ready(function() {
                 a=$.ajax({
                 url: "https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/Buildings/public/index.php/api/temp",
