@@ -33,7 +33,7 @@
         <?php
             if (isset($buildings)) {
                 foreach ($buildings as $a) {
-                    print "<tr><td>" . $a["buildingName"] . "</td></tr>";
+                    print "<tr><td>" . $a["0"] . "</td></tr>";
                 } 
             }    
         ?>
