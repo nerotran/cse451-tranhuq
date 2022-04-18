@@ -67,8 +67,8 @@ class WeatherController extends Controller
         if ($method=="get" &&  sizeof($parts) == 1 && $parts[0] == "temp") {
             
 
-            If (Cache::has(‘temp’)) {
-                $temp = Cache::get(‘temp’);
+            If (Cache::has("temp")) {
+                $temp = Cache::get("temp");
                 $r['status'] = "CACHE";
                 $r['temp'] = $temp;
                 sendJson("OK",$r);
