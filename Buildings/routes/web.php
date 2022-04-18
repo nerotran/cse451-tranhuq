@@ -125,36 +125,7 @@ Route::get('/buildings', function () {
 
 Route::get('/weather', function () {
 
-    //this calls in all autoload packages installed via composer
-    require '/var/www/html/cse451-tranhuq-web/Buildings/vendor/autoload.php';
-    $uri = "/index.php/api/temp"; 
-
-    //create a new client
-    $client = new Client([
-        // Base URI is used with relative requests
-        'base_uri' => $uri,
-        // You can set any number of default request options.
-        'timeout'  => 2.0,
-    ]);
-
-    try {
-      $response = $client->request('GET',"");
-    } catch (Exception $e) {
-      print $e;
-    //  header("content-type: text/plain",true);
-     // print_r($e);
-      $a=print_r($e,true);
-      error_log($a);
-      exit;
-    }
-    $body = (string) $response->getBody();
-    $jbody = json_decode($body);
-    if (!$jbody) {
-      error_log("no json");
-      exit;
-    }
-
-    return view('weather', ['weather'=>$jbody]);
+    return view('weather');
 
 });
 
