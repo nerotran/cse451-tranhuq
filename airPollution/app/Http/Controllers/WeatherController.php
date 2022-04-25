@@ -191,8 +191,8 @@ class WeatherController extends Controller
           error_log("no json");
         }
 
-        $lon = $jbody->0->lon;
-        $lat = $jbody->0->lat;
+        $lon = $jbody[0]->lon;
+        $lat = $jbody[0]->lat;
 
         $r['lon'] = $lon;
         $r['lat'] = $lat;
