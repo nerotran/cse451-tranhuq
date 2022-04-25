@@ -19,7 +19,6 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-        <script src="weather.js"></script>
         <!-- jQuery library -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
 
@@ -29,6 +28,8 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <script src="weather.js"></script>
+
 
     </head>
     <body class="antialiased">
