@@ -18,26 +18,7 @@ $(document).ready(()=>{
 });
 
 function getAirPollution(loc) {
-	var uri = "https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/airPollution/public/index.php/api/airPollution"
-	const arr = loc.split(/[, ]+/);
-	arr.forEach(function(n) {
-		uri = uri + "/" + n;
-	});
-
-	a=$.ajax({
-		url: uri
-		method: "GET"
-	}).done(function(data) {
-		//clear out old data
-		if(data["status"] == "FAIL") {
-			console.error("Wrong input");
-		} else {
-			return data["no2"];
-		}
-
-	}).fail(function() {
-	});
-
+	return Math.random();
 }
 
 let myChart=0
