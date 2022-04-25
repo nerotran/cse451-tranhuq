@@ -26,7 +26,7 @@ function getAirPollution(loc) {
 
 	$.ajax({
 		url: uri,
-		async: false;
+		async: false,
 		method: "GET"
 	}).done(function(data) {
 		if(data["status"] == "FAIL") {
