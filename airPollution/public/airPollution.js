@@ -25,7 +25,7 @@ function getAirPollution(loc) {
 	});
 
 	a=$.ajax({
-		url: uri
+		url: uri,
 		method: "GET"
 	}).done(function(data) {
 		//clear out old data
