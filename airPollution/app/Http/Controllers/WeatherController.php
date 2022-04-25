@@ -194,8 +194,33 @@ class WeatherController extends Controller
         $lon = $jbody[0]->lon;
         $lat = $jbody[0]->lat;
 
-        $r['lon'] = $lon;
-        $r['lat'] = $lat;
+        $uri = "http://api.openweathermap.org/data/2.5/air_pollution?lat=$lat&lon=$lon&appid=$APIKEY";
+
+        //create a new client
+        $client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => $uri,
+            // You can set any number of default request options.
+            'timeout'  => 2.0,
+        ]);
+
+        try {
+
+            $response = $client->request('GET','');
+        } catch (Exception $e) {
+          $r['status'] = "FAIL";
+          $r['error'] = $e;
+          sendJson("FAIL",$r);
+        }
+        $body = (string) $response->getBody();
+        $jbody = json_decode($body);
+        if (!$jbody) {
+          error_log("no json");
+        }
+
+        $no2 = $jbody->list[0]->components->no2;
+
+        $r['no2'] = $no2;
         sendJson("OK",$r);
     }
 }
