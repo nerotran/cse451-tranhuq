@@ -61,7 +61,7 @@ Route::get('/buildings', function () {
 
 Route::get('/weather', function () {
 
-    return redirect("/index.php/api/temp");
+    return views("weather");
 
 })->middleware('cas.auth');
 
