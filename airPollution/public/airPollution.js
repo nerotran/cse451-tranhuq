@@ -50,18 +50,18 @@ function createChart() {
 	let loc1=$("#loc1").val();
 	let loc2=$("#loc2").val();
 	let loc3=$("#loc3").val();
-	if(loc1 !== null) {
+	if(loc1 !== "") {
 		var ap1=getAirPollution(loc1);
 	} else {
 		var ap1 = 0;
 	}
 	
-	if(loc2 !== null) {
+	if(loc2 !== "") {
 		var ap2=getAirPollution(loc2);
 	} else {
 		var ap2 = 0;
 	}
-	if(loc3 !== null) {
+	if(loc3 !== "") {
 		var ap3=getAirPollution(loc3);
 	} else {
 		var ap3 = 0;
