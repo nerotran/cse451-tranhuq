@@ -52,6 +52,7 @@ function createChart() {
 	let loc3=$("#loc3").val();
 	if(loc1 !== "") {
 		var ap1=getAirPollution(loc1);
+		console.log(ap1);
 	} else {
 		var ap1 = 0;
 	}
