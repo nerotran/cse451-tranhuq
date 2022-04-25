@@ -8,17 +8,6 @@ use Illuminate\Support\Facades\Cache;
 
 class WeatherController extends Controller
 {
-    function sendJson($status,$result) {
-              $returnData = array();
-              $returnData['status'] = $status;
-              foreach ($result as $k=>$v) {
-                $returnData[$k] = $v;
-              }
-
-            print json_encode($returnData);
-            exit;
-    }
-
     public function getTemp()
     {
         require '/var/www/html/cse451-tranhuq-web/Buildings/vendor/autoload.php'; 
@@ -32,7 +21,16 @@ class WeatherController extends Controller
         header("content-type: application/json");
         header("Access-Control-Allow-Headers: Content-Type");
 
-        
+        function sendJson($status,$result) {
+              $returnData = array();
+              $returnData['status'] = $status;
+              foreach ($result as $k=>$v) {
+                $returnData[$k] = $v;
+              }
+
+            print json_encode($returnData);
+            exit;
+        }
 
 
         //base uri -> it is important it end in /
