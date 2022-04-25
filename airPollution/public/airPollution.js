@@ -3,8 +3,6 @@
  * cse451
  * airPollution
  * */
-
-
 $(document).ready(()=>{
 	$(".locs").change(() => {
 		createChart();
@@ -24,19 +22,23 @@ function getAirPollution(loc) {
 		uri = uri + "/" + n;
 	});
 
-	a=$.ajax({
+	var ret;
+
+	$.ajax({
 		url: uri,
+		async: false;
 		method: "GET"
 	}).done(function(data) {
 		if(data["status"] == "FAIL") {
 			console.error("Wrong input");
 		} else {
-			console.log(data);
-			return data["no2"];
+			ret = data["no2"];
 		}
 
 	}).fail(function() {
 	});
+
+	return ret;
 
 }
 
