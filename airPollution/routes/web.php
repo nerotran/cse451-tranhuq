@@ -61,7 +61,7 @@ Route::get('/buildings', function () {
 
 Route::get('/weather', function () {
 
-    return views("weather");
+    return view("weather");
 
 })->middleware('cas.auth');
 
