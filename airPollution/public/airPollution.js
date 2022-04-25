@@ -53,18 +53,18 @@ function createChart() {
 	if(loc1 !== null) {
 		let ap1=getAirPollution(loc1);
 	} else {
-		ap1 = 0;
+		let ap1 = 0;
 	}
 	
 	if(loc2 !== null) {
 		let ap2=getAirPollution(loc2);
 	} else {
-		ap2 = 0;
+		let ap2 = 0;
 	}
 	if(loc3 !== null) {
 		let ap3=getAirPollution(loc3);
 	} else {
-		ap3 = 0;
+		let ap3 = 0;
 	}
 	myChart = new Chart(ctx, {
 		type: 'bar',
