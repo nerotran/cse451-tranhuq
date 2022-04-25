@@ -28,7 +28,7 @@ function getAirPollution(loc) {
 		url: uri,
 		method: "GET"
 	}).done(function(data) {
-		console.log(uri);
+		console.log(data);
 		if(data["status"] == "FAIL") {
 			console.error("Wrong input");
 		} else {
