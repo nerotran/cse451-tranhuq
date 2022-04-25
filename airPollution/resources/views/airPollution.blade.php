@@ -19,7 +19,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
-	<script src="/cse451-tranhuq-web/airPollution/resources/views/airPollution.js"></script>
+	<script src="airPollution.js"></script>
 	<style>
 #scott{
 	height: 300px;
