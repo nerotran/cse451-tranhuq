@@ -18,9 +18,10 @@ $(document).ready(()=>{
 function getAirPollution(loc) {
 	var uri = "https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/airPollution/public/index.php/api/airPollution"
 	const arr = loc.split(/[, ]+/);
-	console.log(arr);
+
 	arr.forEach(function(n) {
 		uri = uri + "/" + n;
+		console.log(uri);
 	});
 
 	var ret;
