@@ -48,7 +48,7 @@
 				var popup=L.popup();
 				let keys = Object.keys(ohioCounties);
 				keys.forEach((county)=> {
-					popup()
+					popup
 					.setLatLng(ohioCounties(county)("latLng"))
 					.setContent(ohioCounties(county)("name"))
 					.openOn(map);
