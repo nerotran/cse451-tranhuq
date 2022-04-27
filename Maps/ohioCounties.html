@@ -48,10 +48,7 @@
 				var popup=L.popup();
 				let keys = Object.keys(ohioCounties);
 				keys.forEach((county)=> {
-					popup
-					.setLatLng(ohioCounties[county]["latLng"])
-					.setContent(ohioCounties[county]["name"])
-					.openOn(map);
+					L.marker(hioCounties[county]["latLng"]).addTo(map);
 				});
 
 				<!-- the following creates a popup when clicked shows the lat lon-->
