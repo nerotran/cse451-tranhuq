@@ -45,13 +45,16 @@
 				}).addTo(map);
 
 				<!-- outline all ohio counties-->
+				var popup=L.popup();
 				let keys = Object.keys(ohioCounties);
 				keys.forEach((county)=> {
-					L.polyline(ohioCounties[county]).addTo(map);
+					popup()
+					.setLatLng(ohioCounties(county)(latLng))
+					.setContent(ohioCounties(county)(name))
+					.openOn(map);
 				});
 
 				<!-- the following creates a popup when clicked shows the lat lon-->
-				var popup=L.popup();
 				function myclick(e) {
 					popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
 				}
