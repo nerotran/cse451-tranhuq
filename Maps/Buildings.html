@@ -45,6 +45,7 @@
 			    buildings.data.forEach(building => {
 			        var option = document.createElement('option');
 			        option.text = option.value = building.buildingName;
+			        console.log(building.buildingName);
 			        select.add(option, 0);
 			    });
 
