@@ -40,17 +40,6 @@
 				delta=.001
 
 				L.polyline(["38.866926", "-83.902590"]).addTo(map);
-				buildings.data.forEach(building => {
-					let latlng = [building.latitude,building.longitude];
-					
-					try {
-						L.polyline(latlng).addTo(map);
-					} catch(error) {
-						console.log(latlng);
-					}
-					
-
-				});
 
 			var popup=L.popup();
 function myclick(e) {
