@@ -40,6 +40,13 @@
 
 				L.polyline(ohioCounties.Butler).addTo(map);
 
+				var select = document.getElementById("year");
+			    buildings.data.forEach(building => {
+			        var option = document.createElement('option');
+			        option.text = option.value = building.BuildingName;
+			        select.add(option, 0);
+			    });
+
 			var popup=L.popup();
 function myclick(e) {
 				popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
@@ -55,6 +62,7 @@ html,body {
 		</style>
 	</head>
 	<body>
+		<select id="buildingList" name="buildingList"></select>
 		<div id="mapid"></div>
 
 		<!-- Optional JavaScript -->
