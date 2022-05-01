@@ -42,8 +42,13 @@
 				L.polyline(ohioCounties.Butler).addTo(map);
 				buildings.data.forEach(building => {
 					let latlng = [building.latitude,building.longitude];
-					console.log(latlng);
-					//L.polyline(latlng).addTo(map);
+					
+					try {
+						L.polyline(latlng).addTo(map);
+					} catch {
+						console.log(latlng);
+					}
+					
 
 				});
 
