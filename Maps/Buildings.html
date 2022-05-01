@@ -44,8 +44,8 @@
 				var select = document.getElementById("year");
 			    buildings.data.forEach(building => {
 			        var option = document.createElement('option');
-			        option.text = option.value = building.BuildingName;
-			        console.log(building);
+			        option.text = option.value = building.buildingName;
+			        select.add(option, 0);
 			    });
 
 			var popup=L.popup();
