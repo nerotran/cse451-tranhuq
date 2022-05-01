@@ -40,7 +40,11 @@
 				delta=.001
 
 				L.polyline(ohioCounties.Butler).addTo(map);
-				
+				buildings.data.forEach(building => {
+					let latlng = [building.latitude,building.longtitude];
+					L.polyline(latlng).addTo(map);
+
+				});
 
 			var popup=L.popup();
 function myclick(e) {
