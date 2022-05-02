@@ -45,9 +45,18 @@
 			    buildings.data.forEach(building => {
 			        var option = document.createElement('option');
 			        option.text = option.value = building.buildingName;
-			        console.log(building.buildingName);
 			        select.add(option, 0);
 			    });
+
+				$("#buildingList").change(()=> {
+					var name = $("#buildingList").value;
+					buildings.data.forEach(building => { 
+						if (name == building.buildingName) {
+							var latlng = [building.latitude, building.longitude];
+							popup.setLatLng(latlng).setContent(name).openOn(map);
+						}
+					});
+				});
 
 			var popup=L.popup();
 function myclick(e) {
