@@ -49,7 +49,8 @@
 			    });
 
 				$("#buildingList").change(()=> {
-					var name = $("#buildingList").value;
+					var select = document.getElementById("buildingList");
+					var name = select.value;
 					console.log(name);
 					buildings.data.forEach(building => { 
 						if (name == building.buildingName) {
