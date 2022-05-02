@@ -29,12 +29,13 @@
 				let lat=39.5107;
 				let lon=-84.7341;
 				var map = L.map('mapid').setView([lat, lon], 16);
+				var layerGroup = L.layerGroup().addTo(map);
 
 				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				}).addTo(map);
 
-				L.marker([lat,lon]).addTo(map)
+				L.marker([lat,lon]).addTo(layerGroup)
 					.bindPopup('CEC')
 					.openPopup();
 				delta=.001
@@ -49,6 +50,7 @@
 			    });
 
 				$("#buildingList").change(()=> {
+					layerGroup.clearLayers();
 					var select = document.getElementById("buildingList");
 					var name = select.value;
 					console.log(name);
@@ -56,7 +58,7 @@
 						if (name == building.buildingName) {
 							var latlng = [building.latitude, building.longitude];
 							popup.setLatLng(latlng).setContent(name).openOn(map);
-							L.marker(latlng).addTo(map)
+							L.marker(latlng).addTo(layerGroup)
 								.bindPopup(name)
 								.openPopup();
 						}
