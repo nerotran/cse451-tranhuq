@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SongsController extends Controller
 {
@@ -24,7 +25,21 @@ class SongsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+	$request->validate([
+            'title' => 'required',
+	    'artist' => 'required',
+	    'rank' => 'required',
+	]);
+
+	$input = $request->all();
+
+	$new_song_id = DB::table('songs')->insertGetId($input);
+
+	$new_song = DB::table('songs')
+	    ->where('id', '=', $new_song_id)
+            ->first();
+
+	return response()->json($new_song,201);
     }
 
     /**
