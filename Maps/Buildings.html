@@ -1,3 +1,10 @@
+<!--
+Name: Nero Tran Huu
+Course: CSE 551
+Assignment: Building Locations and Maps
+Date: 5/1/2022
+File: Buildings.html
+-->
 <!doctype html>
 <html lang="en">
 	<head>
@@ -65,10 +72,10 @@
 					});
 				});
 
-			var popup=L.popup();
-function myclick(e) {
-				popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
-			}
+				var popup=L.popup();
+				function myclick(e) {
+					popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(map);
+				}
 				map.on('click',myclick);
 			});
 		</script>
