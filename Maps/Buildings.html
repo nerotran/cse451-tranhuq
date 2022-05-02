@@ -56,6 +56,9 @@
 						if (name == building.buildingName) {
 							var latlng = [building.latitude, building.longitude];
 							popup.setLatLng(latlng).setContent(name).openOn(map);
+							L.marker(latlng).addTo(map)
+								.bindPopup(name)
+								.openPopup();
 						}
 					});
 				});
