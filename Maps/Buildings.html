@@ -50,6 +50,7 @@
 
 				$("#buildingList").change(()=> {
 					var name = $("#buildingList").value;
+					console.log(name);
 					buildings.data.forEach(building => { 
 						if (name == building.buildingName) {
 							var latlng = [building.latitude, building.longitude];
