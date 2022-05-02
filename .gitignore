@@ -1,3 +1,5 @@
 .db.php
 vendor/
 .env
+.env.testing
+test.sqlite
