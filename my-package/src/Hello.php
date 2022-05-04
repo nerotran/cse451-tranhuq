@@ -1,6 +1,6 @@
 <?php
 
-namespace tranhuq\MyPackage;
+namespace Tranhuq\MyPackage;
 
 class Hello {
 	public function sayHello(){
