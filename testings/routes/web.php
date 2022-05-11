@@ -20,3 +20,12 @@ Route::get('/', function () {
 Route::get('/Hello', function () {
     return view('hello', ['name'=>'Nero']);
 });
+
+Route::post("/about",function(Request $request) {
+    $name = $request->input('name');
+    $age = $request->input('age');
+    $school = $request->input('school');
+
+
+    return view('about',['name'=>$name],['age'=>$age],['school'=>$school]);
+});
