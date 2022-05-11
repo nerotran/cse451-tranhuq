@@ -24,7 +24,7 @@ class UserTest extends TestCase
     {
         $response = $this->withHeaders([
             'X-Header' => 'Value',
-        ])->post('/about', ['name' => 'Nero'], ['age' => '20'], ['school', => "Miami University"]);
+        ])->post('/about', ['name' => 'Nero'], ['age' => '20']);
  
         $response->assertStatus(201);
     }
