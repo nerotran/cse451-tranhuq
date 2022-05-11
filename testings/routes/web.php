@@ -23,9 +23,9 @@ Route::get('/Hello', function () {
 });
 
 Route::any("/about",function(Request $request) {
-    $name = $request->input('name');
-    $age = $request->input('age');
-    $school = $request->input('school');
+    $name = $request->input('name', 'Nero');
+    $age = $request->input('age', '20');
+    $school = $request->input('school', 'Miami University');
 
 
     return view('about',['name'=>$name],['age'=>$age],['school'=>$school]);
