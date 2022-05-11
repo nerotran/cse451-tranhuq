@@ -23,7 +23,7 @@ class WeatherController extends Controller
                 $returnData[$k] = $v;
               }
 
-            return json_encode($returnData);
+            return response(json_encode($returnData),200);
         }
 
         $r['message'] = "Hello World!";
