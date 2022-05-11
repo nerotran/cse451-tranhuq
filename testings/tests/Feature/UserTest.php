@@ -28,7 +28,7 @@ class UserTest extends TestCase
         $response = $this->getJson('/api/hello');
  
         $response
-            ->assertStatus(201)
+            ->assertStatus(200)
             ->assertJson([
                 'message' => "Hello World!",
             ]);
