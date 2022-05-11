@@ -24,8 +24,6 @@
         Name: {{$name}}
         <br>
         Age: {{$age}}
-        <br>
-        School: {{$school ?? ""}}
 
     </body>
 </html>
