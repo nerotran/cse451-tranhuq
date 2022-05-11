@@ -12,13 +12,24 @@ class WeatherController extends Controller
     {
         header("Access-Control-Allow-Origin: *");
         header("Access-Control-Allow-Methods: GET,POST,PUSH,OPTIONS");
-        header("content-type: application/json");
         header("Access-Control-Allow-Headers: Content-Type");
+        header("content-type: application/json");
+        
+
+        function sendJson($status,$result) {
+              $returnData = array();
+              $returnData['status'] = $status;
+              foreach ($result as $k=>$v) {
+                $returnData[$k] = $v;
+              }
+
+            print json_encode($returnData);
+            exit;
+        }
 
         $r['message'] = "Hello World!";
-        print json_encode($r);
-        exit;
 
+        sendJson("OK",$r);
 
     }
 }
