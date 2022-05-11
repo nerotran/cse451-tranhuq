@@ -25,7 +25,7 @@
         <br>
         Age: {{$age}}
         <br>
-        School: {{$school}}
+        School: {{$school ?? ""}}
 
     </body>
 </html>
