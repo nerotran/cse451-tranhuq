@@ -25,7 +25,7 @@ class UserTest extends TestCase
 
     public function test_making_an_api_request()
     {
-        $response = $this->getJson('/api/hello');
+        $response = $this->postJson('/api/hello');
  
         $response
             ->assertStatus(201)
