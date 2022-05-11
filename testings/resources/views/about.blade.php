@@ -22,7 +22,9 @@
     </head>
     <body class="antialiased">
         Name: {{$name}}
+        <br>
         Age: {{$age}}
+        <br>
         School: {{$school}}
 
     </body>
