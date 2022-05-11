@@ -24,7 +24,7 @@ class UserTest extends TestCase
     {
         $response = $this->view('hello', ['name' => 'James']);
 
-        $response->assertSee('Hello Nero');
+        $response->assertSee('Hello James');
     }
 
 }
