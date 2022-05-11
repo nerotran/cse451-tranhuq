@@ -9,6 +9,20 @@ use Tests\TestCase;
 class UserTest extends TestCase
 {
 
+    public function test_404()
+    {
+        $response = $this->get('/Laravel');
+
+        $response->assertStatus(404);
+    }
+
+    public function test_View()
+    {
+        $response = $this->view('hello', ['name' => 'James']);
+
+        $response->assertSee('Hello James');
+    }
+
     public function test_making_an_api_request()
     {
         $response = $this->getJson('/api/hello');
