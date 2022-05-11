@@ -20,12 +20,11 @@ class UserTest extends TestCase
         $response->assertStatus(404);
     }
 
-    public function test_interacting_with_headers()
+    public function test_View()
     {
-        $response = $this->withHeaders([
-            'X-Header' => 'Value',
-        ])->post('/about', ['name' => 'Nero'], ['age' => '20']);
- 
-        $response->assertStatus(200);
+        $response = $this->view('/Hello', ['name' => 'James']);
+
+        $response->assertSee('Hello James');
     }
+
 }
