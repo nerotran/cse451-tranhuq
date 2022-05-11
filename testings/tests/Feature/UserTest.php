@@ -13,10 +13,26 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_404()
     {
-        $response = $this->get('/');
+        $response = $this->get('/Laravel');
 
+        $response->assertStatus(404);
+    }
+
+    public function test_interacting_with_headers()
+    {
+        $response = $this->withHeaders([
+            'X-Header' => 'Value',
+        ])->post('/about', ['name' => 'Nero'], ['age' => 20], ['school', => "Miami University"]);
+ 
+        $response->assertStatus(201);
+    }
+
+    public function test_interacting_without_headers()
+    {
+        $response = $this->get('/about');
+ 
         $response->assertStatus(200);
     }
 }

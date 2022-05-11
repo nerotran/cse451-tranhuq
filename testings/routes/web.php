@@ -21,7 +21,7 @@ Route::get('/Hello', function () {
     return view('hello', ['name'=>'Nero']);
 });
 
-Route::post("/about",function(Request $request) {
+Route::any("/about",function(Request $request) {
     $name = $request->input('name');
     $age = $request->input('age');
     $school = $request->input('school');
