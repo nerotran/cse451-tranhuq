@@ -22,7 +22,7 @@ class UserTest extends TestCase
 
     public function test_View()
     {
-        $response = $this->view('/Hello', ['name' => 'James']);
+        $response = $this->view('hello', ['name' => 'James']);
 
         $response->assertSee('Hello James');
     }
