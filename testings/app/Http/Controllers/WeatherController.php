@@ -10,25 +10,10 @@ class WeatherController extends Controller
 {
     public function hello()
     {
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET,POST,PUSH,OPTIONS");
-        header("Access-Control-Allow-Headers: Content-Type");
-        header("content-type: application/json");
-        
-
-        function sendJson($status,$result) {
-              $returnData = array();
-              $returnData['status'] = $status;
-              foreach ($result as $k=>$v) {
-                $returnData[$k] = $v;
-              }
-
-            return response(json_encode($returnData),200);
-        }
-
-        $r['message'] = "Hello World!";
-
-        sendJson("OK",$r);
+        return response()->json([
+        "status" => "OK",
+        "message" => "Hello World!"
+        ], 200);
 
     }
 }
