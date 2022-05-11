@@ -15,20 +15,10 @@ class WeatherController extends Controller
         header("content-type: application/json");
         header("Access-Control-Allow-Headers: Content-Type");
 
-        function sendJson($status,$result) {
-              $returnData = array();
-              $returnData['status'] = $status;
-              foreach ($result as $k=>$v) {
-                $returnData[$k] = $v;
-              }
-
-            print json_encode($returnData);
-            exit;
-        }
-
         $r['message'] = "Hello World!";
+        print json_encode($r);
+        exit;
 
-        sendJson("OK",$r);
 
     }
 }
