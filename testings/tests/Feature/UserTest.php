@@ -26,13 +26,6 @@ class UserTest extends TestCase
             'X-Header' => 'Value',
         ])->post('/about', ['name' => 'Nero'], ['age' => '20']);
  
-        $response->assertStatus(201);
-    }
-
-    public function test_interacting_without_headers()
-    {
-        $response = $this->get('/about');
- 
         $response->assertStatus(200);
     }
 }
