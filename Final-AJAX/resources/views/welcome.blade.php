@@ -26,9 +26,9 @@
                 console.log(URL);
                 var numbers = [];
                 numbers = await get();
-                numbers.forEach((num) => {
-                    $("#table").append("<tr><td>" + num + "</td></tr>");
-                });
+                for (let i = 0; i < numbers.length; i++) {
+                    $("#table").append("<tr><td>" + numbers[i] + "</td></tr>");
+                }
 
             }
 
