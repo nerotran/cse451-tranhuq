@@ -22,7 +22,6 @@ function delete() {
     error_log("Error on execute" . $conn->error);
     sendJson(500,"oops",[]);
   }
-  error_log("good thumbs $sql $song $thumb");
   return array();
 }
 
@@ -40,7 +39,6 @@ function update($name) {
     error_log("Error on execute" . $conn->error);
     sendJson(500,"oops",[]);
   }
-  error_log("good thumbs $sql $song $thumb");
   return array();
 }
 
