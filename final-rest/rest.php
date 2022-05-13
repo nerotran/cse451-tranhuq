@@ -132,9 +132,9 @@ else if ($method=="post" &&  sizeof($parts) == 1 && $parts[0]== "final") {
     sendJson("FAIL","bad request no body",[]);
   }
 
-  
+  error_log($jsonBody['name']);
 
-  $result = update($jsonBody['name']);
+  update($jsonBody['name']);
 
   $r['status'] = "OK";
   sendJson("OK","",[]);
