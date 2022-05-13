@@ -18,7 +18,33 @@ use GuzzleHttp\Client;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Cache::has("title")) {
+        $title = Cache::get("title");
+    } else {
+        $title = "NOT SET"
+    }
+
+    if (Cache::has("author")) {
+        $author = Cache::get("author");
+    } else {
+        $author = "NOT SET"
+    }
+    return view('Final',['author' => $author],['title' => $title]);
+});
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/data', function (Request $request) {
+    $title = $request->input('title');
+    $author = $request->input('author');
+    if (isset($title) && isset($author)) {
+        Cache::put("title",$title,$seconds=60);
+        Cache::put("author",$author,$seconds=60);
+    }
+
+    return redirect('/');
 });
 
 Route::get('/about', function () {
@@ -29,12 +55,6 @@ Route::get('/451', function () {
     return view('451');
 });
 
-Route::get("/data",function() {
-    $data['remote_addr'] = $_SERVER['REMOTE_ADDR'];
-    $data['num'] = rand(1,100);
-
-    return view('data',$data);
-});
 
 Route::get("/remoteinfo",function() {
     $client = new Client([
