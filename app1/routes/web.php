@@ -36,7 +36,7 @@ Route::get('/form', function () {
     return view('form');
 });
 
-Route::post('/data', function (Request $request) {
+Route::any('/data', function (Request $request) {
     $title = $request->input('title');
     $author = $request->input('author');
     if (isset($title) && isset($author)) {
