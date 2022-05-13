@@ -13,7 +13,7 @@
                     url:URL,
                     method: "GET",
                     success: function (data) {
-                        resolv(data.numbers)
+                        console.log(data)
                     },
                     error: function (error) {
                         rej(error)
