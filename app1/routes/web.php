@@ -27,7 +27,7 @@ Route::get('/', function () {
     if (Cache::has("author")) {
         $author = Cache::get("author");
     } else {
-        $author = "NOT SET"
+        $author = "NOT SET";
     }
     return view('Final',['author' => $author],['title' => $title]);
 });
