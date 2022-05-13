@@ -1,16 +1,5 @@
 
 <?php
-/*
- *Name: Nero Tran Huu
- *Course: CSE 551
- *Assignment: rest3-billboard
- *Date: 3/28/2022
- *File: rest.php
- **/
-
-
-session_start();
-
 //create db connection
 require_once ".db.php";
 
@@ -19,9 +8,25 @@ if ($conn->connect_error) {
   die("Error 2 connecting ". $conn->connect_error);
 }
 
-
-
 //update the thumbs state
+function delete() {
+  global $conn;
+
+  $sql = "truncate final";
+  if (!$stmt = $conn->prepare($sql)) {
+    error_log("Error in sql " . $stmt->error);
+    return "Failed, bad sql";
+  }
+
+  if (!$stmt->execute()) {
+    error_log("Error on execute" . $conn->error);
+    sendJson(500,"oops",[]);
+  }
+  error_log("good thumbs $sql $song $thumb");
+  return array();
+}
+
+
 function update($name) {
   global $conn;
 
@@ -39,7 +44,6 @@ function update($name) {
   return array();
 }
 
-//table of songs
 function get() {
   global $conn;
   $sql = "select * from `final`";
@@ -109,15 +113,12 @@ array_shift($parts);
 
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
-//return songs with offset and with rank filter
 if ($method=="get" &&  sizeof($parts) == 1 && $parts[0] == "final") {
   $retData = get();
-  $r['status'] = "OK";
   $r['names'] = $retData;
   sendJson("OK","",$r);
 }
 
-//see if thumbs update
 else if ($method=="post" &&  sizeof($parts) == 1 && $parts[0]== "finals") {
   //get and parse body
   $jsonBody = array();
@@ -135,9 +136,14 @@ else if ($method=="post" &&  sizeof($parts) == 1 && $parts[0]== "finals") {
 
   
 
-  $result = updateThumbs($jsonBody['songPK'],$jsonBody['state']);
+  $result = update($jsonBody['name']);
 
   $r['status'] = "OK";
+  sendJson("OK","",[]);
+}
+
+if ($method=="delete" &&  sizeof($parts) == 1 && $parts[0] == "final") {
+  $retData = delete();
   sendJson("OK","",[]);
 }
 
