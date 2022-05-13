@@ -113,7 +113,7 @@ $method = strtolower($_SERVER['REQUEST_METHOD']);
 if ($method=="get" &&  sizeof($parts) == 1 && $parts[0] == "final") {
   $retData = get();
   $r['status'] = "OK";
-  $r['songs'] = $retData;
+  $r['names'] = $retData;
   sendJson("OK","",$r);
 }
 
