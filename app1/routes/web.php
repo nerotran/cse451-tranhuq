@@ -21,7 +21,7 @@ Route::get('/', function () {
     if (Cache::has("title")) {
         $title = Cache::get("title");
     } else {
-        $title = "NOT SET"
+        $title = "NOT SET";
     }
 
     if (Cache::has("author")) {
