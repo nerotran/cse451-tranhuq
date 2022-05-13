@@ -119,7 +119,7 @@ if ($method=="get" &&  sizeof($parts) == 1 && $parts[0] == "final") {
   sendJson("OK","",$r);
 }
 
-else if ($method=="post" &&  sizeof($parts) == 1 && $parts[0]== "finals") {
+else if ($method=="post" &&  sizeof($parts) == 1 && $parts[0]== "final") {
   //get and parse body
   $jsonBody = array();
   $errormsg = "none";
