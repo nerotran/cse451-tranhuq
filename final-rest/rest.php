@@ -29,7 +29,7 @@ function delete() {
 function update($name) {
   global $conn;
 
-  $sql = "insert ignore into final(name) values ($name)";
+  $sql = "insert ignore into final(name) values ('$name')";
   if (!$stmt = $conn->prepare($sql)) {
     error_log("Error in sql " . $stmt->error);
     return "Failed, bad sql";
