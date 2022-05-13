@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL=https://UID.451.csi.miamioh.edu/cse451-UID-web/final-rest/......  (what ever completes this path to your api)
+URL=https://tranhuq.451.csi.miamioh.edu/cse451-tranhuq-web/final-rest/rest.php/api/v1/final
 
 #add some data.
 
