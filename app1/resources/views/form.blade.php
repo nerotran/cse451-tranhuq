@@ -23,6 +23,7 @@
         <label for="title">Title:</label><br>
         <input type="input" id="author" name="author"><br>
         <label for="title">Author:</label><br>
+        <input type="submit" value="Submit">
     </form>
     </body>
 </html>
