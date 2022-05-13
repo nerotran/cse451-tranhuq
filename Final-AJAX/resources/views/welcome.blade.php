@@ -3,7 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="final.js"></script>
+        <script src="/var/www/html/cse451-tranhuq-web/Final-Ajax/resources/views/final.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <title>Laravel</title>
 
