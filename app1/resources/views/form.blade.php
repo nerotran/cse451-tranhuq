@@ -19,6 +19,7 @@
     </head>
     <body class="antialiased">
     <form action="/cse451-tranhuq-web/app1/public/data" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="input" id="title" name="title"><br>
         <label for="title">Title:</label><br>
         <input type="input" id="author" name="author"><br>
