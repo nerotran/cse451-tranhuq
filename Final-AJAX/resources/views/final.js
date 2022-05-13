@@ -1,4 +1,4 @@
-var URL="/api/data";
+var URL="cse451-tranhuq-web/Final-AJAX/public/api/data";
 
 function get(key, token) {
 	return new Promise((resolv,rej) =>{
@@ -16,7 +16,6 @@ function get(key, token) {
 }
 
 async function program() {
-    console.log(URL);
 	var numbers = [];
 	numbers = await get();
 	numbers.foreach((num) => {
