@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script>
-            var URL="cse451-tranhuq-web/Final-AJAX/public/api/data";
+            var URL="public/api/data";
 
             function get(key, token) {
                 return new Promise((resolv,rej) =>{
