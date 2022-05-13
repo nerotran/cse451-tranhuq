@@ -24,7 +24,7 @@ class RandomController extends Controller
         }
 
         $numbers =  array();
-        for ($x = 0; $x <= rand(0,9),$x++) {
+        for ($x = 0; $x <= rand(0,9);$x++) {
             $numbers[] = rand();
         }
 
