@@ -28,7 +28,7 @@ class RandomController extends Controller
             $numbers[] = rand();
         }
 
-        r["numbers"] = $numbers;
+        $r["numbers"] = $numbers;
         sendJson("OK", $numbers);
     }
 
