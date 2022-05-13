@@ -3,8 +3,39 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="/var/www/html/cse451-tranhuq-web/Final-Ajax/resources/views/final.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            var URL="/api/data";
+
+            function get(key, token) {
+                return new Promise((resolv,rej) =>{
+                    $.ajax({
+                    url:URL,
+                    method: "GET",
+                    success: function (data) {
+                        resolv(data.numbers)
+                    },
+                    error: function (error) {
+                        rej(error)
+                    },
+                    })
+                })
+            }
+
+            async function program() {
+                console.log(URL);
+                var numbers = [];
+                numbers = await get();
+                numbers.foreach((num) => {
+                    $("#table").append("<tr><td>" + num + "</td></tr>");
+                });
+
+            }
+
+            $(document).ready(function() {
+                program();
+            });
+        </script>
 
         <title>Laravel</title>
 
