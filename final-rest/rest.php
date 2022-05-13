@@ -29,7 +29,7 @@ function delete() {
 function update($name) {
   global $conn;
 
-  $sql = "update final set name=$name";
+  $sql = "update final set names=$name";
   if (!$stmt = $conn->prepare($sql)) {
     error_log("Error in sql " . $stmt->error);
     return "Failed, bad sql";
