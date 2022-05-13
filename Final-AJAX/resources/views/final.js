@@ -16,6 +16,7 @@ function get(key, token) {
 }
 
 async function program() {
+    console.log(URL);
 	var numbers = [];
 	numbers = await get();
 	numbers.foreach((num) => {
